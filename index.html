@@ -726,10 +726,7 @@ footer p { font-family: var(--mono); font-size: 0.64rem; color: var(--muted); le
       <div class="ac-title">6+ Months Gym Discipline</div>
       <p class="ac-desc">Maintained consistent gym training for over 6 months — demonstrating the same discipline and consistency required to master complex technical skills.</p>
     </div>
-    <div class="ac add-ac s-zoom d5" id="addAchBtn" onclick="addAchievement()">
-      <div class="add-plus">+</div>
-      <div class="add-lbl"> Achievements</div>
-    </div>
+
   </div>
 </section>
 
@@ -835,19 +832,7 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll('.s-up,.s-left,.s-right,.s-zoom').forEach(el => io.observe(el));
 
 
-/* ADD ACHIEVEMENT */
-function addAchievement() {
-  const title = prompt('Achievement title:');
-  if (!title) return;
-  const desc  = prompt('Brief description:') || '';
-  const yr    = prompt('Year:') || new Date().getFullYear();
-  const board = document.getElementById('achBoard');
-  const btn   = document.getElementById('addAchBtn');
-  const cell  = document.createElement('div');
-  cell.className = 'ac';
-  cell.innerHTML = `<span class="ac-yr">${yr}</span><div class="ac-title">${title}</div><p class="ac-desc">${desc}</p>`;
-  board.insertBefore(cell, btn);
-}
+
 
 /* SMOOTH SCROLL */
 document.querySelectorAll('a[href^="#"]').forEach(a =>
